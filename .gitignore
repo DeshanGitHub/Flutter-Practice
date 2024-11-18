@@ -45,8 +45,3 @@
 **/android/app/profile
 **/android/app/release
 
-#unwanted folders
-**/windows
-**/web
-**/macos
-**/linux
