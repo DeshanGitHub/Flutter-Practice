@@ -25,7 +25,10 @@ class _HomePageAnimationDemoState extends State<HomePageAnimationDemo>
     textScaleAnimation = Tween<double>(begin: 0, end: 1).animate(controller);
     textPositionAnimation =
         Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
-            .animate(controller);
+            .animate(CurvedAnimation(
+      parent: controller,
+      curve: Curves.bounceInOut,
+    ));
     controller.forward();
 
     super.initState();
