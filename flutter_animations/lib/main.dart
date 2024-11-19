@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/animations/explicit_animations/home_page_animation.dart';
+// ignore: unused_import
 import 'package:flutter_animations/animations/implicit_animations/animated_box.dart';
 // ignore: unused_import
 import 'package:flutter_animations/animations/implicit_animations/animated_container.dart';
@@ -15,7 +17,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         // body: AnimatedContainerDemo(),
-        body: AnimatedBoxDemo(),
+        // body: AnimatedBoxDemo(),
+        body: HomePageAnimationDemo(),
       ),
     );
   }
