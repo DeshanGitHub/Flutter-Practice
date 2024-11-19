@@ -43,6 +43,7 @@ class GridHomePage extends StatelessWidget {
             },
             child: Hero(
               tag: 'item_$index',
+              flightShuttleBuilder: _flightShuttleBuilder,
               child: Card(
                 child: GridTile(
                   child: Container(
@@ -66,6 +67,28 @@ class GridHomePage extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  Widget _flightShuttleBuilder(
+    BuildContext flightContext,
+    Animation<double> animation,
+    HeroFlightDirection flightDirection,
+    BuildContext fromHeroContext,
+    BuildContext toHeroContext,
+  ) {
+    return AnimatedBuilder(
+      animation: animation,
+      builder: (context, child) {
+        double rotationValue = flightDirection == HeroFlightDirection.push
+            ? animation.value * 3.14
+            : (1 - animation.value) * 3.14;
+        return Transform(
+          alignment: Alignment.center,
+          transform: Matrix4.identity()..rotateY(rotationValue),
+          child: toHeroContext.widget,
+        );
+      },
     );
   }
 }
