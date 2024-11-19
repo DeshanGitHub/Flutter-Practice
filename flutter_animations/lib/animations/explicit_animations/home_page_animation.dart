@@ -11,6 +11,7 @@ class _HomePageAnimationDemoState extends State<HomePageAnimationDemo>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> logoFadeAnimation;
+  late Animation<double> textScaleAnimation;
 
   @override
   void initState() {
@@ -20,6 +21,7 @@ class _HomePageAnimationDemoState extends State<HomePageAnimationDemo>
     );
 
     logoFadeAnimation = Tween<double>(begin: 0, end: 1).animate(controller);
+    textScaleAnimation = Tween<double>(begin: 0, end: 1).animate(controller);
     controller.forward();
 
     super.initState();
@@ -41,6 +43,18 @@ class _HomePageAnimationDemoState extends State<HomePageAnimationDemo>
             opacity: logoFadeAnimation,
             child: const FlutterLogo(
               size: 100.0,
+            ),
+          ),
+          const SizedBox(height: 20.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: ScaleTransition(
+              scale: textScaleAnimation,
+              child: const Text(
+                'Welcome to Flutter Devs and Flutter Animations as very important part of Flutter Development and Flutter Devs is the best place to learn Flutter Development',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0),
+              ),
             ),
           ),
         ],
