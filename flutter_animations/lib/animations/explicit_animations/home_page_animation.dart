@@ -12,6 +12,7 @@ class _HomePageAnimationDemoState extends State<HomePageAnimationDemo>
   late AnimationController controller;
   late Animation<double> logoFadeAnimation;
   late Animation<double> textScaleAnimation;
+  late Animation<Offset> textPositionAnimation;
 
   @override
   void initState() {
@@ -22,6 +23,9 @@ class _HomePageAnimationDemoState extends State<HomePageAnimationDemo>
 
     logoFadeAnimation = Tween<double>(begin: 0, end: 1).animate(controller);
     textScaleAnimation = Tween<double>(begin: 0, end: 1).animate(controller);
+    textPositionAnimation =
+        Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+            .animate(controller);
     controller.forward();
 
     super.initState();
@@ -48,12 +52,15 @@ class _HomePageAnimationDemoState extends State<HomePageAnimationDemo>
           const SizedBox(height: 20.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: ScaleTransition(
-              scale: textScaleAnimation,
-              child: const Text(
-                'Welcome to Flutter Devs and Flutter Animations as very important part of Flutter Development and Flutter Devs is the best place to learn Flutter Development',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 20.0),
+            child: SlideTransition(
+              position: textPositionAnimation,
+              child: ScaleTransition(
+                scale: textScaleAnimation,
+                child: const Text(
+                  'Welcome to Flutter Devs and Flutter Animations as very important part of Flutter Development and Flutter Devs is the best place to learn Flutter Development',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 20.0),
+                ),
               ),
             ),
           ),
