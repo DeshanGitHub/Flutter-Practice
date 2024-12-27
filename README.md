@@ -5,9 +5,6 @@ A collection of Flutter learning exercises.
 ### Main Branches
 
 1. Following branches contains exercises focused on implementing various Flutter animations.
-   ```sh
-    flutter_animations
-   ```
-   ```sh
-    explicit_animation_exercise_1
-   ```
+
+   - flutter_animations
+        * explicit_animation_exercise_1
