@@ -1,8 +1,6 @@
 # Flutter-Practice
 
-A collection of Flutter learning exercises.
-
-### Main Branches
+_A collection of Flutter learning exercises._
 
 #### ✨ Following branches contains exercises focused on implementing various Flutter animations.
 
