@@ -2,6 +2,5 @@
 
 A collection of Flutter learning exercises.
 
-## Main Branches
-
+### Main Branches
     * flutter_animations
