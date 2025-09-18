@@ -9,3 +9,5 @@ _A collection of Flutter learning exercises._
   - explicit_animation_exercise_2
   - implicit_animation_exercise_1
   - implicit_animation_exercise_2
+-flutter_navigation
+  - basic_navigation_push_and_pop
